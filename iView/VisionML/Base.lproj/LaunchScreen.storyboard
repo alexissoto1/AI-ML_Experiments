@@ -21,10 +21,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iView 2 2 2" translatesAutoresizingMaskIntoConstraints="NO" id="wfz-bd-sCb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-gR-S9Y">
-                                <rect key="frame" x="136" y="53" width="103" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-gR-S9Y">
+                                <rect key="frame" x="144.5" y="51" width="86.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -33,7 +32,9 @@
                         <constraints>
                             <constraint firstItem="wfz-bd-sCb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="By1-Up-jlK"/>
                             <constraint firstItem="wfz-bd-sCb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gED-BL-akg"/>
+                            <constraint firstItem="r8k-gR-S9Y" firstAttribute="centerX" secondItem="wfz-bd-sCb" secondAttribute="centerX" id="kv2-sz-CkB"/>
                             <constraint firstItem="wfz-bd-sCb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nKA-IP-JTF"/>
+                            <constraint firstItem="r8k-gR-S9Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="p7W-qA-4Vl"/>
                             <constraint firstItem="wfz-bd-sCb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yAL-S4-5NG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

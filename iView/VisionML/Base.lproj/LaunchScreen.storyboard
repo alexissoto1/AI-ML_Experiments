@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.19.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,25 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iView 2 2 2" translatesAutoresizingMaskIntoConstraints="NO" id="wfz-bd-sCb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iView 2 2 2" translatesAutoresizingMaskIntoConstraints="NO" id="q9a-FQ-6s8">
+                                <rect key="frame" x="67" y="212" width="240" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-gR-S9Y">
-                                <rect key="frame" x="144.5" y="51" width="86.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-V8-LzV">
+                                <rect key="frame" x="149" y="189" width="77" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wfz-bd-sCb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="By1-Up-jlK"/>
-                            <constraint firstItem="wfz-bd-sCb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gED-BL-akg"/>
-                            <constraint firstItem="r8k-gR-S9Y" firstAttribute="centerX" secondItem="wfz-bd-sCb" secondAttribute="centerX" id="kv2-sz-CkB"/>
-                            <constraint firstItem="wfz-bd-sCb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nKA-IP-JTF"/>
-                            <constraint firstItem="r8k-gR-S9Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="p7W-qA-4Vl"/>
-                            <constraint firstItem="wfz-bd-sCb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yAL-S4-5NG"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.93725490196078431" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

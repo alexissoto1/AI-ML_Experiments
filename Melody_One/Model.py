@@ -1,4 +1,4 @@
-# Based on https://github.com/hexahedria/biaxial-rnn-music-composition
+# Based on  based on Siraj Raval Tensorflow model with some modifications on it.
 
 import numpy as np
 import glob
@@ -25,9 +25,6 @@ def get_songs(path):
             raise e
             print("Error at loading MIDI files")
     return songs
-
-
-##################################################################################################################################################################
 
 # Model parameters
 
@@ -77,16 +74,13 @@ def gibbs_sample(k):
     ct = tf.constant(0)  # counter
     [_, _, x_sample] = control_flow_ops.while_loop(lambda count, num_iter, *args: count < num_iter,
                                                    gibbs_step, [ct, tf.constant(k), x])
-    # This is not strictly necessary in this implementation,
-    # but if you want to adapt this code to use one of TensorFlow's
-    # optimizers, you need this in order to stop tensorflow from propagating gradients back through the gibbs step
+
     x_sample = tf.stop_gradient(x_sample)
     return x_sample
 
 
 # Training Update Code
 
-# First, we get the samples of x and h from the probability distribution
 # The sample of x
 x_sample = gibbs_sample(1)
 # The sample of the hidden nodes, starting from the visible state of x
@@ -94,8 +88,6 @@ h = sample(tf.sigmoid(tf.matmul(x, W) + bh))
 # The sample of the hidden nodes, starting from the visible state of x_sample
 h_sample = sample(tf.sigmoid(tf.matmul(x_sample, W) + bh))
 
-# Next, we update the values of W, bh, and bv,
-# based on the difference between the samples that we drew and the original values
 size_bt = tf.cast(tf.shape(x)[0], tf.float32)
 W_adder = tf.multiply(lr / size_bt,
                       tf.subtract(tf.matmul(tf.transpose(x), h), tf.matmul(tf.transpose(x_sample), h_sample)))
@@ -120,9 +112,6 @@ def Run(path):
         # Run through all of the training data num_epochs times
         for epoch in tqdm(range(num_epochs)):
             for song in songs:
-                # The songs are stored in a time x notes format. The size of each song is timesteps_in_song x 2*note_range
-                # Here we reshape the songs so that each training example
-                # is a vector with num_timesteps x 2*note_range elements
                 song = np.array(song)
                 song = song[:int(np.floor(song.shape[0] // num_timesteps) * num_timesteps)]
                 song = np.reshape(song, [song.shape[0] // num_timesteps, song.shape[1] * num_timesteps])
@@ -132,8 +121,8 @@ def Run(path):
                     tr_x = song[i:i + batch_size]
                     sess.run(updt, feed_dict={x: tr_x})
         
-        # Making music after model training!
-        # Run a gibbs chain where the visible nodes are initialized to 0
+        # Music!!!!!!
+        
         sample = gibbs_sample(1).eval(session=sess, feed_dict={x: np.zeros((10, n_visible))})
         for i in range(sample.shape[0]):
             if not any(sample[i, :]):
